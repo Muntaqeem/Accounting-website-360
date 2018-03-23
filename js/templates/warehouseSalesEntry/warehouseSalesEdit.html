@@ -1,0 +1,89 @@
+<div class="ibox">
+    <div class="ibox-title">
+        <h5 style="">Sales Entry Edit</h5>
+    </div>
+    <div class="ibox-content">
+        <form id="form" ng-submit="submitSales()" class="wizard-big">
+            <fieldset>
+                <div class="row" style="margin-bottom: 30px;">
+                    <div class="col-lg-6" style="">
+                        <div class="form-group" style="margin-bottom: 0px;">
+                            <h5>Select a Buyer
+                                <span style="color:red">*</span>
+                            </h5>
+                            <ui-select ng-model="buyer" on-select="buyerSelected($item, $model)" ng-required="true" style="padding-left: 0px; height: 32px;"
+                                theme="select2" class="col-md-11" title="Choose a Buyer">
+                                <ui-select-match placeholder="Select buyer">{{$select.selected.company}}</ui-select-match>
+                                <ui-select-choices repeat="person in buyers | propsFilter: {company: $select.search}">
+                                    <div ng-bind-html="person.company | highlight: $select.search"></div>
+                                    <!-- <small>
+                                    Company: <span ng-bind-html="''+person.company | highlight: $select.search"></span>
+                                </small> -->
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <a ng-click="addNewBuyer()" class="col-md-1 btn btn-info" data-toggle="tooltip" data-placement="top" title="Add new buyer">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-6" style="">
+                        <div class="form-group" style="margin-bottom: 0px;">
+                            <h5>Reference
+                                <span style="color:red">*</span>
+                            </h5>
+                            <input type="text" ng-model="reference" class="form-control" required >
+                        </div>
+                    </div>
+                    <div class="col-lg-6" style="">
+                        <div class="form-group" style="margin-bottom: 0px;">
+                            <h5>Select a product
+                                <span style="color:red">*</span>
+                            </h5>
+                            <ui-select multiple ng-model="pickedProducts" on-select="productSelected($item, selectedProducts)" ng-required="true" close-on-select="false" style="padding-left: 0px;"
+                                theme="select2" class="col-md-12" title="Choose products">
+                                <ui-select-match placeholder="Select products">{{$item.name}}</ui-select-match>
+                                <ui-select-choices repeat="product in products | propsFilter: {name: $select.search}">
+                                    <div ng-bind-html="product.name | highlight: $select.search"></div>
+                                    <small>
+                                        Meta: <span ng-bind-html="''+product.meta | highlight: $select.search"></span>
+                                    </small>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="table-responsive" ng-repeat="product in selectedProducts">
+                    <h3>Name: {{product.name}}</h3>
+                    <h3>Meta: {{product.meta}}</h3>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr class="p-th">
+                                <th>Color</th>
+                                <th>Size</th>
+                                <th>Stock</th>
+                                <th style="width: 20%;">Sell Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="color in product.colors">
+                            <tr class="p-td" ng-repeat="size in color.sizes">
+                                <td>{{color.name}}</td>
+                                <td>{{size.name}}</td>
+                                <td>{{size.quantity}}</td>
+                                <td>
+                                    <input type="text" ng-model="size.sellQuantity" required class="form-control" size="16" value="0">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row col-md-12" style="text-align: center; margin-top: 8px;" ng-hide="submittingSales">
+                    <input style="width: 40%;" ng-disabled="!buyer.id || selectedProducts.length==0" type="submit" class="btn btn-info" value="Update Sales">
+                </div>
+                <div class="row col-md-12" style="text-align: center; margin-top: 8px;" ng-show="submittingSales">
+                    <img src="img/spinner.gif" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

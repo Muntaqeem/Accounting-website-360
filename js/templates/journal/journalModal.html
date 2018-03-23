@@ -1,0 +1,61 @@
+<style>
+    .app-modal-window .modal-dialog {
+        width: 400px;
+    }
+
+    .padding-left-3em {
+        padding-left: 3em;
+    }
+</style>
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Journal</h3>
+</div>
+<div class="modal-body" id="modal-body">
+        <div class="row" style="text-align:center; margin-bottom:20px">
+            <h1>XYZ Company</h1>
+            <h3>Journal</h3>
+            <h3>Journal On {{date | date : 'M/d/yyyy'}}</h3>
+        </div>
+        <table class="table table-bordered dataTables-example">
+            <thead>
+                <tr class="gtable text-jm">
+                    <th rowspan="2" style="width: 10%; vertical-align: middle;">Date</th>
+                    <th rowspan="2" style="width: 50%; vertical-align: middle;">Description</th>
+                    <th rowspan="2" style="width: 10%; vertical-align: middle;">PR</th>
+                    <th colspan="2">Amount</th>
+                    <tr class="gtable text-jm">
+                        <th>Dr.</th>
+                        <th>Cr.</th>
+                    </tr>
+                </tr>
+            </thead>
+            <tbody ng-repeat="journal in journals" ng-hide="journal.ledger.length==0">
+                <tr class="gradeX" ng-repeat="ledger in journal.ledger track by $index" >
+                    <td rowspan="{{journal.ledger.length+1}}" ng-if="$index==0" style="vertical-align: middle;">{{journal.created_at | date : 'd/M/yyyy'}}</td>
+                    <td style="border-top: 0; border-bottom: 0;">
+                        <span ng-show="ledger.pivot.account_type=='Dr'">{{ledger.name}}</span>
+                        <span ng-show="ledger.pivot.account_type=='Cr'" style="margin-left: 3em;">To {{ledger.name}}</span>
+                    </td>
+                    <td style="border-top: 0; border-bottom: 0; text-align: center;">{{ledger.id}}</td>
+                    <td style="text-align: right; border-top: 0; border-bottom: 0; text-align: center;">
+                        <span ng-if="ledger.pivot.account_type=='Dr'">{{ledger.pivot.value}}</span>
+                    </td>
+                    <td style="text-align: right; border-top: 0; border-bottom: 0; text-align: center;">
+                        <span ng-if="ledger.pivot.account_type=='Cr'">{{ledger.pivot.value}}</span>
+                    </td>
+                </tr>
+                <tr class="gradeX">
+                    <td style="border-top: 0; font-style: italic;">({{journal.narration}})</td>
+                    <td style="border-top: 0;"></td>
+                    <td style="border-top: 0;"></td>
+                    <td style="border-top: 0;"></td>
+                </tr>
+            </tbody>
+        </table>
+    <div class="table-responsive" ng-show="journals.length==0">
+        <p>No transaction occurred on {{date | date : 'M/d/yyyy'}}.</p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel();">Close</button>
+</div>
