@@ -1,179 +1,208 @@
 <!DOCTYPE html>
 <html>
 
+    
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layouts</title>
-
+    <!--/tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript">
-		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+                function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--//tags -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/flexslider.css" rel="stylesheet" type="text/css" media="screen">
+    
+    <!-- <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" /> -->
 
-
+    
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- //for bootstrap working -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    
+
+    <!-- Rafee's index -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="css/plugins/steps/jquery.steps.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/select.css">
+    <link href="css/animate.css" rel="stylesheet"> -->
+    
+    <!-- <link rel="stylesheet" href="css/select.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
     <link rel="stylesheet" href="https://rawgit.com/buberdds/angular-bootstrap-colorpicker/master/css/colorpicker.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.min.css">
-    <link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
-    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
-    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
-    <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/1.0.0-beta.1/ng-google-chart.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
-    <script src="https://cdn.rawgit.com/bradberger/angular-material-calendar/master/dist/angular-material-calendar.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
-    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
-    <script src="js/angular-select.js"></script>
-    <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
-    <script src="https://rawgit.com/buberdds/angular-bootstrap-colorpicker/master/js/bootstrap-colorpicker-module.min.js"></script>
-    <script src="app.js"></script>
-    <script src="service.js"></script>
-
-
-
-
-    <script src="js/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-    <script src="js/plugins/ng-file-upload/dist/ng-file-upload.min.js"></script>
-    <!--<script src="js/inspinia.js"></script>-->
-    <script src="js/plugins/pace/pace.min.js"></script>
-    <script src="js/plugins/summernote/summernote.min.js"></script>
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <!-- //js -->
-    <script src="js/minicart.min.js"></script>
-    <script src="js/easy-responsive-tabs.js"></script>
-    <script src="js/jquery.countup.js"></script>
-
-    <!-- //script for responsive tabs -->
-    <!-- stats -->
-    <script src="js/jquery.waypoints.min.js"></script>
-
-
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
-    <script src="js/modernizr.custom.js"></script>
-    <script src="js/controllers/HomeController.js"></script>
-    <script src="js/controllers/SingleProductDetailsController.js"></script>
-
-
-    <!-- Custom-JavaScript-File-Links -->
+    <link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css"> -->
+    <!-- <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css"> -->
+    <!-- Rafee's index ended -->
 </head>
 
 <body ng-app="accounting-web">
-
     <ui-view></ui-view>
-
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-datepicker/2.1.23/angular-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/1.0.0-beta.1/ng-google-chart.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+<script src="https://cdn.rawgit.com/bradberger/angular-material-calendar/master/dist/angular-material-calendar.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="js/angular-select.js"></script>
+<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+<script src="https://rawgit.com/buberdds/angular-bootstrap-colorpicker/master/js/bootstrap-colorpicker-module.min.js"></script>
+<script src="app.js"></script>
+<script src="service.js"></script>
 
-<!-- cart-js -->
 
+<!-- Controller -->
 
-<!-- Controllers -->
+<script src="js/controllers/HomeController.js"></script>
+<script src="js/controllers/SingleProductDetailsController.js"></script>
+<!-- <script src="js/controllers/purchaseCtrl.js"></script>
+<script src="js/controllers/accountsPurchaseCtrl.js"></script>
+<script src="js/controllers/accountsSalesCtrl.js"></script>
+<script src="js/controllers/superAdminJournalCtrl.js"></script>
+<script src="js/controllers/superAdminLedgerCtrl.js"></script>
+<script src="js/controllers/superAdminDashboardCtrl.js"></script>
+<script src="js/controllers/superAdminStockCtrl.js"></script>
+<script src="js/controllers/warehouseDashboardCtrl.js"></script>
+<script src="js/controllers/addNewMemberCtrl.js"></script>
+<script src="js/controllers/warehouseSalesEntryCtrl.js"></script>
+<script src="js/controllers/purchaseDetailsCtrl.js"></script>
+<script src="js/controllers/addNewLedgerCtrl.js"></script>
+<script src="js/controllers/productDetailsCtrl.js"></script>
+<script src="js/controllers/productDetailsUpdateCtrl.js"></script> -->
+
 
 
 
 <!-- Mainly scripts -->
 
+<script src="js/jquery-2.1.4.min.js"></script>
+
+
+    <script src="js/modernizr.custom.js"></script>
+    <!-- Custom-JavaScript-File-Links -->
+    <!-- cart-js -->
+    <script src="js/minicart.min.js"></script>
+    <script>
+        // Mini Cart
+        paypal.minicart.render({
+            action: '#'
+        });
+
+        if (~window.location.search.indexOf('reset=true')) {
+            paypal.minicart.reset();
+        }
+    </script>
+
+    
+
+    <!-- //cart-js -->
+    <script src="js/imagezoom.js"></script>
+    <!-- script for responsive tabs -->
+    <script src="js/easy-responsive-tabs.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true,   // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+    </script>
+
+<script src="js/jquery.flexslider.js"></script>
+<script>
+// Can also be used with $(document).ready()
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+        animation: "slide",
+        controlNav: "thumbnails"
+        });
+    });
+</script>
+
+    
+    <!-- //script for responsive tabs -->
+    <!-- stats -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+    <!-- //stats -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+
+<script src="js/bootstrap.min.js"></script>
+<!-- <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script> -->
 
 <!-- Custom and plugin javascript -->
+<!-- <script src="js/plugins/ng-file-upload/dist/ng-file-upload.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script> -->
 
 
+<!-- <script>
+	$(document).ready(function(){
 
+		$('.summernote').summernote();
 
+	});
+</script>
 
+<script>
+	$(document).ready(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
 
-
-<!-- //cart-js -->
-<!-- script for responsive tabs -->
-
-<!--<script>-->
-	<!--$('.counter').countUp();-->
-<!--</script>-->
-<!--&lt;!&ndash; //stats &ndash;&gt;-->
-<!--&lt;!&ndash; start-smoth-scrolling &ndash;&gt;-->
-
-
-
-<!--<script>-->
-	<!--// Mini Cart-->
-	<!--paypal.minicart.render({-->
-		<!--action: '#'-->
-	<!--});-->
-
-	<!--if (~window.location.search.indexOf('reset=true')) {-->
-		<!--paypal.minicart.reset();-->
-	<!--}-->
-<!--</script>-->
-
-<!--<script type="text/javascript">-->
-	<!--jQuery(document).ready(function ($) {-->
-		<!--$(".scroll").click(function (event) {-->
-			<!--event.preventDefault();-->
-			<!--$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);-->
-		<!--});-->
-	<!--});-->
-<!--</script>-->
-<!--&lt;!&ndash; here stars scrolling icon &ndash;&gt;-->
-<!--<script type="text/javascript">-->
-	<!--$(document).ready(function () {-->
-        <!--/*-->
-         <!--var defaults = {-->
-         <!--containerID: 'toTop', // fading element id-->
-         <!--containerHoverID: 'toTopHover', // fading element hover id-->
-         <!--scrollSpeed: 1200,-->
-         <!--easingType: 'linear'-->
-         <!--};-->
-         <!--*/-->
-
-		<!--$().UItoTop({ easingType: 'easeOutQuart' });-->
-
-	<!--});-->
-<!--</script>-->
-<!--<script>-->
-	<!--$(document).ready(function () {-->
-		<!--$('#horizontalTab').easyResponsiveTabs({-->
-			<!--type: 'default', //Types: default, vertical, accordion-->
-			<!--width: 'auto', //auto or any width like 600px-->
-			<!--fit: true,   // 100% fit in a container-->
-			<!--closed: 'accordion', // Start closed if in accordion view-->
-			<!--activate: function (event) { // Callback function if tab is switched-->
-				<!--var $tab = $(this);-->
-				<!--var $info = $('#tabInfo');-->
-				<!--var $name = $('span', $info);-->
-				<!--$name.text($tab.text());-->
-				<!--$info.show();-->
-			<!--}-->
-		<!--});-->
-		<!--$('#verticalTab').easyResponsiveTabs({-->
-			<!--type: 'vertical',-->
-			<!--width: 'auto',-->
-			<!--fit: true-->
-		<!--});-->
-	<!--});-->
-<!--</script>-->
-
-
-</html>
+</html> -->

@@ -1,6 +1,8 @@
 var myApp = angular.module('accounting-web', ['ui.router', 'ngSanitize', 'ngTable', 'ui.bootstrap', 'ui.select', 'colorpicker.module', '720kb.datepicker'])
 	.value('$anchorScroll', angular.noop);
 
+var imgBase = "http://soft360d.com/accountingManagement/uploads/images/";
+
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 	var home = {
 		name: 'home',
@@ -20,6 +22,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 			obj: null
 		}
 	}
+
+	
 	
 	// var warehousePurchase = {
 	// 	name: 'warehousePurchase',

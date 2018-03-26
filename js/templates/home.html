@@ -63,49 +63,45 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav menu__list">
-                            <li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
-                            <li class="dropdown menu__item">
-                                <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
+                            <li class="active menu__item menu__item--current"><a class="menu__link" href="#" ng-click="homeCtrl.getProducts()">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="dropdown menu__item" ng-repeat="category in homeCtrl.categories">
+                                <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{category.name}}<span class="caret"></span></a>
                                 <ul class="dropdown-menu multi-column columns-3">
                                     <div class="agile_inner_drop_nav_info">
                                         <div class="col-sm-3 multi-gd-img">
                                             <ul class="multi-column-dropdown">
-                                                <li><a href="mens.html">Clothing</a></li>
-                                                <li><a href="mens.html">Wallets</a></li>
-                                                <li><a href="mens.html">Footwear</a></li>
-                                                <li><a href="mens.html">Watches</a></li>
+                                                <li ng-repeat="sub in category.sub_category"><a href="#" ng-click="homeCtrl.selectCategory(sub.id)">{{sub.name}}</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="mens.html">Watches</a></li>
-                                                <li><a href="mens.html">Accessories</a></li>
-                                                <li><a href="mens.html">Bags</a></li>
-                                                <li><a href="mens.html">Caps & Hats</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="mens.html">Clothing</a></li>
-                                                <li><a href="mens.html">Wallets</a></li>
-                                                <li><a href="mens.html">Footwear</a></li>
-                                                <li><a href="mens.html">Watches</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="mens.html">Beauty</a></li>
-                                                <li><a href="mens.html">Shirts</a></li>
-                                                <li><a href="mens.html">Sunglasses</a></li>
-                                                <li><a href="mens.html">Swimwear</a></li>
-                                            </ul>
-                                        </div>
+                                        <!--<div class="col-sm-3 multi-gd-img">-->
+                                        <!--<ul class="multi-column-dropdown">-->
+                                        <!--<li><a href="mens.html">Watches</a></li>-->
+                                        <!--<li><a href="mens.html">Accessories</a></li>-->
+                                        <!--<li><a href="mens.html">Bags</a></li>-->
+                                        <!--<li><a href="mens.html">Caps & Hats</a></li>-->
+                                        <!--</ul>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-sm-3 multi-gd-img">-->
+                                        <!--<ul class="multi-column-dropdown">-->
+                                        <!--<li><a href="mens.html">Clothing</a></li>-->
+                                        <!--<li><a href="mens.html">Wallets</a></li>-->
+                                        <!--<li><a href="mens.html">Footwear</a></li>-->
+                                        <!--<li><a href="mens.html">Watches</a></li>-->
+                                        <!--</ul>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-sm-3 multi-gd-img">-->
+                                        <!--<ul class="multi-column-dropdown">-->
+                                        <!--<li><a href="mens.html">Beauty</a></li>-->
+                                        <!--<li><a href="mens.html">Shirts</a></li>-->
+                                        <!--<li><a href="mens.html">Sunglasses</a></li>-->
+                                        <!--<li><a href="mens.html">Swimwear</a></li>-->
+                                        <!--</ul>-->
+                                        <!--</div>-->
                                         <div class="clearfix"></div>
                                     </div>
                                 </ul>
                             </li>
-                            <li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
-                            <li class=" menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -254,7 +250,7 @@
 </div>
 <!-- //Modal2 -->
 <!-- banner -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" ng-hide="1==1">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -321,100 +317,100 @@
     <!-- The Modal -->
 </div>
 <!-- //banner -->
-<div class="banner_bottom_agile_info">
-    <div class="container">
-        <div class="banner_bottom_agile_info_inner_w3ls">
-            <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
-                <figure class="effect-roxy">
-                    <img src="images/bottom1.jpg" alt=" " class="img-responsive" />
-                    <figcaption>
-                        <h3><span>F</span>all Ahead</h3>
-                        <p>New Arrivals</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">
-                <figure class="effect-roxy">
-                    <img src="images/bottom2.jpg" alt=" " class="img-responsive" />
-                    <figcaption>
-                        <h3><span>F</span>all Ahead</h3>
-                        <p>New Arrivals</p>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
+<!--<div class="banner_bottom_agile_info">-->
+    <!--<div class="container">-->
+        <!--<div class="banner_bottom_agile_info_inner_w3ls">-->
+            <!--<div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">-->
+                <!--<figure class="effect-roxy">-->
+                    <!--<img src="images/bottom1.jpg" alt=" " class="img-responsive" />-->
+                    <!--<figcaption>-->
+                        <!--<h3><span>F</span>all Ahead</h3>-->
+                        <!--<p>New Arrivals</p>-->
+                    <!--</figcaption>-->
+                <!--</figure>-->
+            <!--</div>-->
+            <!--<div class="col-md-6 wthree_banner_bottom_grid_three_left1 grid">-->
+                <!--<figure class="effect-roxy">-->
+                    <!--<img src="images/bottom2.jpg" alt=" " class="img-responsive" />-->
+                    <!--<figcaption>-->
+                        <!--<h3><span>F</span>all Ahead</h3>-->
+                        <!--<p>New Arrivals</p>-->
+                    <!--</figcaption>-->
+                <!--</figure>-->
+            <!--</div>-->
+            <!--<div class="clearfix"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <!-- banner-bootom-w3-agileits -->
-<div class="banner-bootom-w3-agileits">
-    <div class="container">
-        <h3 class="wthree_text_info">What's <span>Trending</span></h3>
+<!--<div class="banner-bootom-w3-agileits">-->
+    <!--<div class="container">-->
+        <!--<h3 class="wthree_text_info">What's <span>Trending</span></h3>-->
 
-        <div class="col-md-5 bb-grids bb-left-agileits-w3layouts">
-            <a href="womens.html">
-                <div class="bb-left-agileits-w3layouts-inner grid">
-                    <figure class="effect-roxy">
-                        <img src="images/bb1.jpg" alt=" " class="img-responsive" />
-                        <figcaption>
-                            <h3><span>S</span>ale </h3>
-                            <p>Upto 55%</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-7 bb-grids bb-middle-agileits-w3layouts">
-            <a href="mens.html">
-                <div class="bb-middle-agileits-w3layouts grid">
-                    <figure class="effect-roxy">
-                        <img src="images/bottom3.jpg" alt=" " class="img-responsive" />
-                        <figcaption>
-                            <h3><span>S</span>ale </h3>
-                            <p>Upto 55%</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </a>
-            <a href="mens.html">
-                <div class="bb-middle-agileits-w3layouts forth grid">
-                    <figure class="effect-roxy">
-                        <img src="images/bottom4.jpg" alt=" " class="img-responsive">
-                        <figcaption>
-                            <h3><span>S</span>ale </h3>
-                            <p>Upto 65%</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </a>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
+        <!--<div class="col-md-5 bb-grids bb-left-agileits-w3layouts">-->
+            <!--<a href="womens.html">-->
+                <!--<div class="bb-left-agileits-w3layouts-inner grid">-->
+                    <!--<figure class="effect-roxy">-->
+                        <!--<img src="images/bb1.jpg" alt=" " class="img-responsive" />-->
+                        <!--<figcaption>-->
+                            <!--<h3><span>S</span>ale </h3>-->
+                            <!--<p>Upto 55%</p>-->
+                        <!--</figcaption>-->
+                    <!--</figure>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div class="col-md-7 bb-grids bb-middle-agileits-w3layouts">-->
+            <!--<a href="mens.html">-->
+                <!--<div class="bb-middle-agileits-w3layouts grid">-->
+                    <!--<figure class="effect-roxy">-->
+                        <!--<img src="images/bottom3.jpg" alt=" " class="img-responsive" />-->
+                        <!--<figcaption>-->
+                            <!--<h3><span>S</span>ale </h3>-->
+                            <!--<p>Upto 55%</p>-->
+                        <!--</figcaption>-->
+                    <!--</figure>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<a href="mens.html">-->
+                <!--<div class="bb-middle-agileits-w3layouts forth grid">-->
+                    <!--<figure class="effect-roxy">-->
+                        <!--<img src="images/bottom4.jpg" alt=" " class="img-responsive">-->
+                        <!--<figcaption>-->
+                            <!--<h3><span>S</span>ale </h3>-->
+                            <!--<p>Upto 65%</p>-->
+                        <!--</figcaption>-->
+                    <!--</figure>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<div class="clearfix"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <!--/grids-->
-<div class="agile_last_double_sectionw3ls">
-    <div class="col-md-6 multi-gd-img multi-gd-text ">
-        <a href="womens.html"><img src="images/bot_1.jpg" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
+<!--<div class="agile_last_double_sectionw3ls">-->
+    <!--<div class="col-md-6 multi-gd-img multi-gd-text ">-->
+        <!--<a href="womens.html"><img src="images/bot_1.jpg" alt=" "><h4>Flat <span>50%</span> offer</h4></a>-->
 
-    </div>
-    <div class="col-md-6 multi-gd-img multi-gd-text ">
-        <a href="womens.html"><img src="images/bot_2.jpg" alt=" "><h4>Flat <span>50%</span> offer</h4></a>
-    </div>
-    <div class="clearfix"></div>
-</div>
+    <!--</div>-->
+    <!--<div class="col-md-6 multi-gd-img multi-gd-text ">-->
+        <!--<a href="womens.html"><img src="images/bot_2.jpg" alt=" "><h4>Flat <span>50%</span> offer</h4></a>-->
+    <!--</div>-->
+    <!--<div class="clearfix"></div>-->
+<!--</div>-->
 <!--/grids-->
 <!-- /new_arrivals -->
-<div class="new_arrivals_agile_w3ls_info">
+<div  class="new_arrivals_agile_w3ls_info">
     <div class="container">
         <div class="single-pro" >
             <div class="col-md-3 product-men" ng-repeat="item in homeCtrl.products">
                 <div class="men-pro-item simpleCart_shelfItem">
                     <div class="men-thumb-item">
-                        <img src="images/m1.jpg" alt="" class="pro-image-front">
-                        <img src="images/m1.jpg" alt="" class="pro-image-back">
+                        <img src="{{homeCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-front">
+                        <img ng-src="{{homeCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-back">
                         <div class="men-cart-pro">
                             <div class="inner-men-cart-pro">
-                                <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                <a href="#" ng-click="homeCtrl.singleProduct(item)" class="link-product-add-cart">Quick View</a>
                             </div>
                         </div>
                         <span class="product-new-top">New</span>
@@ -423,171 +419,173 @@
                     <div class="item-info-product ">
                         <h4><a href="#" ng-click="homeCtrl.singleProduct(item)">{{item.name}}</a></h4>
                         <div class="info-product-price">
-                            <span class="item_price">$45.99</span>
+                            <span class="item_price">45.99$</span>
                         </div>
                     </div>
                 </div>
             </div>
             <!--<div class="col-md-3 product-men">-->
-                <!--<div class="men-pro-item simpleCart_shelfItem">-->
-                    <!--<div class="men-thumb-item">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
-                        <!--<div class="men-cart-pro">-->
-                            <!--<div class="inner-men-cart-pro">-->
-                                <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<span class="product-new-top">New</span>-->
+            <!--<div class="men-pro-item simpleCart_shelfItem">-->
+            <!--<div class="men-thumb-item">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
+            <!--<div class="men-cart-pro">-->
+            <!--<div class="inner-men-cart-pro">-->
+            <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<span class="product-new-top">New</span>-->
 
-                    <!--</div>-->
-                    <!--<div class="item-info-product ">-->
-                        <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
-                        <!--<div class="info-product-price">-->
-                            <!--<span class="item_price">$45.99</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-info-product ">-->
+            <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
+            <!--<div class="info-product-price">-->
+            <!--<span class="item_price">$45.99</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div class="col-md-3 product-men">-->
-                <!--<div class="men-pro-item simpleCart_shelfItem">-->
-                    <!--<div class="men-thumb-item">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
-                        <!--<div class="men-cart-pro">-->
-                            <!--<div class="inner-men-cart-pro">-->
-                                <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<span class="product-new-top">New</span>-->
+            <!--<div class="men-pro-item simpleCart_shelfItem">-->
+            <!--<div class="men-thumb-item">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
+            <!--<div class="men-cart-pro">-->
+            <!--<div class="inner-men-cart-pro">-->
+            <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<span class="product-new-top">New</span>-->
 
-                    <!--</div>-->
-                    <!--<div class="item-info-product ">-->
-                        <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
-                        <!--<div class="info-product-price">-->
-                            <!--<span class="item_price">$45.99</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-info-product ">-->
+            <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
+            <!--<div class="info-product-price">-->
+            <!--<span class="item_price">$45.99</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div class="col-md-3 product-men">-->
-                <!--<div class="men-pro-item simpleCart_shelfItem">-->
-                    <!--<div class="men-thumb-item">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
-                        <!--<div class="men-cart-pro">-->
-                            <!--<div class="inner-men-cart-pro">-->
-                                <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<span class="product-new-top">New</span>-->
+            <!--<div class="men-pro-item simpleCart_shelfItem">-->
+            <!--<div class="men-thumb-item">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
+            <!--<div class="men-cart-pro">-->
+            <!--<div class="inner-men-cart-pro">-->
+            <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<span class="product-new-top">New</span>-->
 
-                    <!--</div>-->
-                    <!--<div class="item-info-product ">-->
-                        <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
-                        <!--<div class="info-product-price">-->
-                            <!--<span class="item_price">$45.99</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-info-product ">-->
+            <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
+            <!--<div class="info-product-price">-->
+            <!--<span class="item_price">$45.99</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div class="col-md-3 product-men">-->
-                <!--<div class="men-pro-item simpleCart_shelfItem">-->
-                    <!--<div class="men-thumb-item">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
-                        <!--<div class="men-cart-pro">-->
-                            <!--<div class="inner-men-cart-pro">-->
-                                <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<span class="product-new-top">New</span>-->
+            <!--<div class="men-pro-item simpleCart_shelfItem">-->
+            <!--<div class="men-thumb-item">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
+            <!--<div class="men-cart-pro">-->
+            <!--<div class="inner-men-cart-pro">-->
+            <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<span class="product-new-top">New</span>-->
 
-                    <!--</div>-->
-                    <!--<div class="item-info-product ">-->
-                        <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
-                        <!--<div class="info-product-price">-->
-                            <!--<span class="item_price">$45.99</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-info-product ">-->
+            <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
+            <!--<div class="info-product-price">-->
+            <!--<span class="item_price">$45.99</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div class="col-md-3 product-men">-->
-                <!--<div class="men-pro-item simpleCart_shelfItem">-->
-                    <!--<div class="men-thumb-item">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
-                        <!--<div class="men-cart-pro">-->
-                            <!--<div class="inner-men-cart-pro">-->
-                                <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<span class="product-new-top">New</span>-->
+            <!--<div class="men-pro-item simpleCart_shelfItem">-->
+            <!--<div class="men-thumb-item">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
+            <!--<div class="men-cart-pro">-->
+            <!--<div class="inner-men-cart-pro">-->
+            <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<span class="product-new-top">New</span>-->
 
-                    <!--</div>-->
-                    <!--<div class="item-info-product ">-->
-                        <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
-                        <!--<div class="info-product-price">-->
-                            <!--<span class="item_price">$45.99</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-info-product ">-->
+            <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
+            <!--<div class="info-product-price">-->
+            <!--<span class="item_price">$45.99</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div class="col-md-3 product-men">-->
-                <!--<div class="men-pro-item simpleCart_shelfItem">-->
-                    <!--<div class="men-thumb-item">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
-                        <!--<div class="men-cart-pro">-->
-                            <!--<div class="inner-men-cart-pro">-->
-                                <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<span class="product-new-top">New</span>-->
+            <!--<div class="men-pro-item simpleCart_shelfItem">-->
+            <!--<div class="men-thumb-item">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
+            <!--<div class="men-cart-pro">-->
+            <!--<div class="inner-men-cart-pro">-->
+            <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<span class="product-new-top">New</span>-->
 
-                    <!--</div>-->
-                    <!--<div class="item-info-product ">-->
-                        <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
-                        <!--<div class="info-product-price">-->
-                            <!--<span class="item_price">$45.99</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-info-product ">-->
+            <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
+            <!--<div class="info-product-price">-->
+            <!--<span class="item_price">$45.99</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <!--<div class="col-md-3 product-men">-->
-                <!--<div class="men-pro-item simpleCart_shelfItem">-->
-                    <!--<div class="men-thumb-item">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
-                        <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
-                        <!--<div class="men-cart-pro">-->
-                            <!--<div class="inner-men-cart-pro">-->
-                                <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<span class="product-new-top">New</span>-->
+            <!--<div class="men-pro-item simpleCart_shelfItem">-->
+            <!--<div class="men-thumb-item">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-front">-->
+            <!--<img src="images/m1.jpg" alt="" class="pro-image-back">-->
+            <!--<div class="men-cart-pro">-->
+            <!--<div class="inner-men-cart-pro">-->
+            <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<span class="product-new-top">New</span>-->
 
-                    <!--</div>-->
-                    <!--<div class="item-info-product ">-->
-                        <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
-                        <!--<div class="info-product-price">-->
-                            <!--<span class="item_price">$45.99</span>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item-info-product ">-->
+            <!--<h4><a href="single.html">Formal Blue Shirt</a></h4>-->
+            <!--<div class="info-product-price">-->
+            <!--<span class="item_price">$45.99</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
+
+<div ng-show="homeCtrl.products.length == 0"><h3>Sorry, No product available for this category</h3></div>
 <!-- //new_arrivals -->
 <!-- /we-offer -->
-<div class="sale-w3ls">
-    <div class="container">
-        <h6>We Offer Flat <span>40%</span> Discount</h6>
+<!--<div class="sale-w3ls">-->
+    <!--<div class="container">-->
+        <!--<h6>We Offer Flat <span>40%</span> Discount</h6>-->
 
-        <a class="hvr-outline-out button2" href="single.html">Shop Now </a>
-    </div>
-</div>
+        <!--<a class="hvr-outline-out button2" href="single.html">Shop Now </a>-->
+    <!--</div>-->
+<!--</div>-->
 <!-- //we-offer -->
 
 <!-- footer -->
