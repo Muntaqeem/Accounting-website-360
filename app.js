@@ -10,12 +10,15 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 		controllerAs: 'homeCtrl'
 	}
 	
-	var singleProductDetails = {
-		name: 'singleProductDetails',
+	var SingleProductDetails = {
+		name: 'singleProduct',
 		url: '/productDetails',
 		templateUrl: 'js/templates/singleproductdetails.html',
 		controller: 'SingleProductController',
-		controllerAs: 'singleProductController'
+		controllerAs: 'spCtrl',
+		params:{
+			obj: null
+		}
 	}
 	
 	// var warehousePurchase = {
@@ -152,12 +155,16 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 	// $stateProvider.state(productDetails);
 	// $stateProvider.state(marketing);
 	$stateProvider.state(home);
-	$stateProvider.state(singleProductDetails);
+	$stateProvider.state(SingleProductDetails);
 	
 	
 	
 	$urlRouterProvider.otherwise('/');
 });
+
+myApp.run(function(){
+	localStorage.setItem("token",'$2y$10$uRso7XP7C5/UHD6YQOFVn.OkA5BMlq1wVjepj0goOIkTQINGIfLSq');
+})
 
 // myApp.run(function ($rootScope, $state) {
 // 	$rootScope.role = localStorage.getItem("role");
