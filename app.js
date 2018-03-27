@@ -14,13 +14,10 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 	
 	var SingleProductDetails = {
 		name: 'singleProduct',
-		url: '/productDetails',
+		url: '/productDetails/:obj',
 		templateUrl: 'js/templates/singleproductdetails.html',
 		controller: 'SingleProductController',
-		controllerAs: 'spCtrl',
-		params:{
-			obj: null
-		}
+		controllerAs: 'spCtrl'
 	}
 
 	

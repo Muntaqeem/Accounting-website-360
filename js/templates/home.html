@@ -406,20 +406,20 @@
             <div class="col-md-3 product-men" ng-repeat="item in homeCtrl.products">
                 <div class="men-pro-item simpleCart_shelfItem">
                     <div class="men-thumb-item">
-                        <img src="{{homeCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-front">
+                        <img ng-src="{{homeCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-front">
                         <img ng-src="{{homeCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-back">
                         <div class="men-cart-pro">
                             <div class="inner-men-cart-pro">
-                                <a href="#" ng-click="homeCtrl.singleProduct(item)" class="link-product-add-cart">Quick View</a>
+                                <a href="#!/productDetails/{{item.id}}" class="link-product-add-cart">Quick View</a>
                             </div>
                         </div>
-                        <span class="product-new-top">New</span>
+                       
 
                     </div>
                     <div class="item-info-product ">
-                        <h4><a href="#" ng-click="homeCtrl.singleProduct(item)">{{item.name}}</a></h4>
+                        <h4><a href="#!/productDetails/{{item.id}}">{{item.name}}</a></h4>
                         <div class="info-product-price">
-                            <span class="item_price">45.99$</span>
+                            <span class="item_price"></span>
                         </div>
                     </div>
                 </div>

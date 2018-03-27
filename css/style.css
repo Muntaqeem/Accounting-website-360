@@ -1588,8 +1588,13 @@ button.w3view-cart {
     background: #f7f7f7;
 }
 .men-thumb-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 160px;
     transition: all 0.5s ease-out 0s;
     padding: 52px 50px 20px;
+    width: auto;
 }
 .men-thumb-item:hover .men-cart-pro {
     opacity: 1;

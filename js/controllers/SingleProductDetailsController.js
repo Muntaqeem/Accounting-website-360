@@ -5,11 +5,37 @@ myApp.controller('SingleProductController', function($scope, baseSvc,$stateParam
 
 	home = this;
 	
-	console.log($stateParams);
+	var id = $stateParams.obj;
 	
-	var id = $stateParams.obj.id;
+	home.imgBase = "http://soft360d.com/accountingManagement/uploads/images/";
+
+	home.selectCategory = function(id)
+	{
+		baseSvc.get("subcategory/product?id="+id)
+			.then(function(response){
+				
+				home.products = response;
+				console.log(home.products);
+				
+			});
+	}
+
+	home.selectCategory();
+
+	home.getProducts = function(){
+		$state.go('home');
+	}
 	
-	console.log(id);
+	
+	
+	$scope.getCategories = function(){
+		baseSvc.get("categories")
+			.then(function(response){
+				home.categories = response;
+				console.log(home.categories);
+			});
+	}
+	$scope.getCategories();
 	
 	home.getProduct = function()
 	{
@@ -21,4 +47,6 @@ myApp.controller('SingleProductController', function($scope, baseSvc,$stateParam
 	}
 	
 	home.getProduct();
+
+
 })
