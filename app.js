@@ -6,7 +6,7 @@ var imgBase = "http://soft360d.com/accountingManagement/uploads/images/";
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 	var home = {
 		name: 'home',
-		url: '/',
+		url: '/:category',
 		templateUrl: 'js/templates/home.html',
 		controller: 'HomeController',
 		controllerAs: 'homeCtrl'
@@ -160,11 +160,54 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 	
 	
 	
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('/0');
 });
 
 myApp.run(function(){
 	localStorage.setItem("token",'$2y$10$uRso7XP7C5/UHD6YQOFVn.OkA5BMlq1wVjepj0goOIkTQINGIfLSq');
+})
+
+
+
+myApp.run(function($http, $rootScope, $q,$state){
+	
+	var baseUrl = "http://soft360d.com/accountingManagement/api/";
+	var token = localStorage.getItem('token');
+	var get= function(endPoint) {
+		var deferred = $q.defer();
+		$http({
+			url: baseUrl + endPoint,
+			method: "GET",
+			headers: {
+				"api-token": token,
+				"content-Type": "application/json"
+			}
+		}).then(function(success) {
+			deferred.resolve(success.data);
+		}, function(error) {
+			deferred.resolve({
+				error: error
+			});
+			if(error.status==401 || error.status==403){
+				localStorage.clear();
+				location.href = 'login.html';
+			}
+		});
+		return deferred.promise;
+	};
+	
+	var home = $rootScope;
+	
+	var getProducts = function(){
+		get("categories")
+			.then(function(response){
+				$rootScope.categories= response;
+				console.log($rootScope.categories);
+			});
+	}
+	
+	getProducts();
+	
 })
 
 // myApp.run(function ($rootScope, $state) {

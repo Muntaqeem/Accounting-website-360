@@ -1,9 +1,10 @@
 /**
  * Created by mgmuntaqeem on 23/3/18.
  */
-myApp.controller('HomeController', function($scope, $rootScope, $state, $http, baseSvc){
+myApp.controller('HomeController', function($scope, $rootScope, $state, $http, baseSvc,$stateParams){
 	
 	home = this;
+	var id = $stateParams.category;
 	home.imgBase = "http://soft360d.com/accountingManagement/uploads/images/";
 	home.getProducts = function(){
 		baseSvc.get("available/products")
@@ -12,17 +13,6 @@ myApp.controller('HomeController', function($scope, $rootScope, $state, $http, b
 				console.log(home.products);
 			});
 	}
-	home.getProducts();
-	
-	
-	$scope.getCategories = function(){
-		baseSvc.get("categories")
-			.then(function(response){
-				home.categories = response;
-				console.log(home.categories);
-			});
-	}
-	$scope.getCategories();
 	
 	
 	home.singleProduct = function(item){
@@ -41,6 +31,17 @@ myApp.controller('HomeController', function($scope, $rootScope, $state, $http, b
 				
 			});
 	}
+	if(id==0)
+	{
+		home.getProducts();
+		
+		
+	}
 	
+	else
+	{
+		home.selectCategory(id);
+	}
+
 	
 })
