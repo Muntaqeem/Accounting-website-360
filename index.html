@@ -52,11 +52,11 @@
             <h1><a href="index.html"><span>M</span>aisha Fashion</a></h1>
         </div>
         <div class="col-md-4 header-middle">
-            <div id='search-box' style="margin-top: 15px">
+            <div id='search-box' style="">
                 <form id='search-form' target='_top'>
                     <input id='search-text' ng-bind="$root.searchText" name='q' placeholder='Search' type='text'/>
                     <a href="#!/search/{{$root.searchText}}">
-                        <button id='search-button'>
+                        <button id='search-button' style="margin-top: 0px;">
                             <span>Search</span>
                         </button>
                     </a>
@@ -66,8 +66,11 @@
         <!-- header-bot -->
 
         <!-- header-bot -->
-        <div class="col-md-4 agileits-social top_content">
-            <ul class="social-nav model-3d-0 footer-social w3_agile_social">
+		<div class="col-md-2">
+			<button type="button" class="btn" style="background-color: black; color:white; float: right;">Login</button>
+		</div>
+        <div class="col-md-2 agileits-social top_content">
+            <ul class="social-nav model-3d-0 footer-social w3_agile_social" style="margin-top:0px;">
                 <li class="share">Follow Us : </li>
                 <li>
                     <a href="#" class="facebook">
@@ -94,8 +97,6 @@
                     <!--</a>-->
                 <!--</li>-->
             </ul>
-
-
 
         </div>
         <div class="clearfix"></div>
