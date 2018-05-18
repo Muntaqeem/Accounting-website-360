@@ -53,11 +53,13 @@
         </div>
         <div class="col-md-4 header-middle">
             <div id='search-box' style="margin-top: 15px">
-                <form id='search-form' method='get' target='_top'>
-                    <input id='search-text' name='q' placeholder='Search' type='text'/>
-                    <button id='search-button' ng-click>
-                        <span>Search</span>
-                    </button>
+                <form id='search-form' target='_top'>
+                    <input id='search-text' ng-bind="$root.searchText" name='q' placeholder='Search' type='text'/>
+                    <a href="#!/search/{{$root.searchText}}">
+                        <button id='search-button'>
+                            <span>Search</span>
+                        </button>
+                    </a>
                 </form>
             </div>
         </div>
@@ -118,7 +120,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav menu__list">
-                            <li class="active menu__item menu__item--current"><a class="menu__link" href="#!/0">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="active menu__item menu__item--current"><a class="menu__link" href="#!/0">Home<span class="sr-only">(current)</span></a></li>
                             <li class="dropdown menu__item" ng-repeat="category in $root.categories">
                                 <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{category.name}}<span class="caret"></span></a>
                                 <ul class="dropdown-menu multi-column columns-3">
@@ -345,6 +347,7 @@
 
 <script src="js/controllers/HomeController.js"></script>
 <script src="js/controllers/SingleProductDetailsController.js"></script>
+<script src="js/controllers/SearchController.js"></script>
 <!-- <script src="js/controllers/purchaseCtrl.js"></script>
 <script src="js/controllers/accountsPurchaseCtrl.js"></script>
 <script src="js/controllers/accountsSalesCtrl.js"></script>

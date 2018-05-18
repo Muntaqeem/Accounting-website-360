@@ -12,6 +12,16 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 		controllerAs: 'homeCtrl'
 	}
 	
+	var search = {
+		name: 'search',
+		url: '/:text',
+		templateUrl: 'js/templates/home.html',
+		controller: 'SearchController',
+		controllerAs: 'searchCtrl'
+	}
+	
+	
+	
 	var SingleProductDetails = {
 		name: 'singleProduct',
 		url: '/productDetails/:obj',
@@ -170,7 +180,7 @@ myApp.run(function(){
 
 
 myApp.run(function($http, $rootScope, $q,$state){
-	
+	$rootScope.searchText = "";
 	var baseUrl = "http://soft360d.com/accountingManagement/api/";
 	var token = localStorage.getItem('token');
 	var get= function(endPoint) {
