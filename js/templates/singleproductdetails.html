@@ -363,6 +363,9 @@
 				<slide ng-repeat="image in spCtrl.product.images track by $index" active="slide.active">
 					<img ng-src="{{spCtrl.imgBase+image.image_path}}" width="100%">
 				</slide>
+				<slide active="slide.active" ng-if="spCtrl.product.images.length==0">
+					<img src="https://cdn4.iconfinder.com/data/icons/stash/128/box-packing-peanut-512.png" width="100%">
+				</slide>
 			</carousel>
 
 			<!-- <div class="grid images_3_of_2">

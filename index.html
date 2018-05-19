@@ -52,9 +52,9 @@
             <h1><a href="index.html"><span>M</span>aisha Fashion</a></h1>
         </div>
         <div class="col-md-4 col-sm-6 col-xs-12 header-middle media-mob">
-            <div id='search-box' style="">
+            <div id='search-box' ng-hide="$root.showSearchBar">
                 <form id='search-form' target='_top'>
-                    <input id='search-text' ng-bind="$root.searchText" name='q' placeholder='Search' type='text'/>
+                    <input id='search-text' ng-model="$root.searchText" name='q' placeholder='Search' type='text'/>
                     <a href="#!/search/{{$root.searchText}}">
                         <button id='search-button' style="margin-top: 0px;">
                             <span>Search</span>

@@ -14,8 +14,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 	
 	var search = {
 		name: 'search',
-		url: '/:text',
-		templateUrl: 'js/templates/home.html',
+		url: '/search/:text',
+		templateUrl: 'js/templates/search.html',
 		controller: 'SearchController',
 		controllerAs: 'searchCtrl'
 	}
@@ -166,6 +166,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 	// $stateProvider.state(productDetails);
 	// $stateProvider.state(marketing);
 	$stateProvider.state(home);
+	$stateProvider.state(search);
 	$stateProvider.state(SingleProductDetails);
 	
 	

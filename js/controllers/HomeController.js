@@ -5,6 +5,7 @@ myApp.controller('HomeController', function($scope, $rootScope, $state, $http, b
 	
 	home = this;
 	var id = $stateParams.category;
+	$rootScope.showSearchBar = false;
 	home.imgBase = "http://soft360d.com/accountingManagement/uploads/images/";
 	home.getProducts = function(){
 		baseSvc.get("available/products")
@@ -35,12 +36,15 @@ myApp.controller('HomeController', function($scope, $rootScope, $state, $http, b
 	{
 		home.getProducts();
 		
+		home.errorMessage = "Sorry, no product is available";
 		
 	}
 	
 	else
 	{
 		home.selectCategory(id);
+		
+		home.errorMessage = "Sorry, no product is available for this category";
 	}
 
 	

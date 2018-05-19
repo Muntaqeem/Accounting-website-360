@@ -346,8 +346,8 @@
             <div class="col-md-4 col-sm-6 col-xs-12 header-middle media-mob">
                 <div id='search-box' ng-show="$root.showSearchBar">
                     <form id='search-form' target='_top'>
-                        <input id='search-text' ng-bind="$root.searchText" name='q' placeholder='Search' type='text' />
-                        <a ng-click="homeCtrl.getProducts($root.searchText)">
+                        <input id='search-text' ng-model="text" name='q' placeholder='Search' type='text' />
+                        <a ng-click="searchCtrl.getProducts(text)">
                             <button id='search-button' style="margin-top: 0px;">
                                 <span>Search</span>
                             </button>
@@ -359,7 +359,7 @@
             </div>
         </div>
         <div class="single-pro">
-            <div class="col-md-3 product-men" ng-repeat="item in homeCtrl.products">
+            <div class="col-md-3 product-men" ng-repeat="item in products">
                 <a href="#!/productDetails/{{item.id}}">
                     <div class="men-pro-item simpleCart_shelfItem">
                         <div class="men-thumb-item">
@@ -368,8 +368,8 @@
                             <img ng-if="item.images.length==0" src="https://cdn4.iconfinder.com/data/icons/stash/128/box-packing-peanut-512.png" alt=""
                                 class="pro-image-back">
 
-                            <img ng-if="item.images.length" ng-src="{{homeCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-front">
-                            <img ng-if="item.images.length" ng-src="{{homeCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-back">
+                            <img ng-if="item.images.length" ng-src="{{searchCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-front">
+                            <img ng-if="item.images.length" ng-src="{{searchCtrl.imgBase+item.images[0].image_path}}" alt="" class="pro-image-back">
                             <div class="men-cart-pro">
                                 <div class="inner-men-cart-pro">
                                     <a href="#!/productDetails/{{item.id}}" class="link-product-add-cart">Quick View</a>
@@ -389,8 +389,8 @@
                     </div>
                 </a>
             </div>
-            <div ng-show="homeCtrl.products.length == 0" class="col-md-12">
-                <h3>{{homeCtrl.errorMessage}}</h3>
+            <div ng-show="products.length == 0" class="col-md-12">
+                <h3>{{errorMessage}}</h3>
             </div>
             <!--<div class="col-md-3 product-men">-->
             <!--<div class="men-pro-item simpleCart_shelfItem">-->
