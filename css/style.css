@@ -107,8 +107,8 @@ label{
     transition: 0.5s;
 }
 .model-3d-0 a {
-    background:#5C5B5B;
-    -webkit-transform-style: preserve-3d;
+	background: white;
+	-webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
@@ -233,7 +233,7 @@ li.share {
     font-weight: 300;
     color: #000;
     letter-spacing: 1px;
-    font-size: 1.5em;
+    font-size: 1em;
 	position:relative;
 }
 .logo_agile h1 a:hover {
@@ -2252,6 +2252,12 @@ h3.agileits-icons-title {
 		width:33.33%;
 	}
 }
+
+@media (max-width: 768px){
+    .media-mob {
+		margin-top: 10px;
+		}
+}
 @media (max-width:991px){
 	h3.agileits-icons-title {
 		font-size: 28px;
@@ -3781,10 +3787,6 @@ p.w3ls_para {
 		float: left;
 		width: 31%;
 	}
-	.header-middle {
-	   margin-top:0px;
-		width:100%;
-	}
 	.section_room {
 		float: left;
 		width: 48%;
@@ -4072,9 +4074,7 @@ p.w3ls_para {
 	
 	.logo_agile {
 		text-align: left;
-		margin-top: 1em;
 		padding: 0;
-		float: left;
 	}
 	.social-nav {
 		padding: 0;
@@ -5553,5 +5553,6 @@ p.w3ls_para {
 	#PPMiniCart {
       left: 68% !important;
     }
-}
+	
+
 /*-- //responsive media queries --*/
